@@ -14,11 +14,10 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 ## Get started
 
 1. Git Clone
-```bash
 
-git clone https://github.com/Bao44/music-app-player.git
-
-```
+   ```bash
+   git clone https://github.com/Bao44/music-app-player.git
+   ```
 
 2. Install dependencies
 

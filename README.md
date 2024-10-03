@@ -9,7 +9,7 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 | **Full Name**      | **ID Number** |
 |-----------------|:-------------------:|
 | Trương Quốc Bảo |      21017351       |
-| Phan Trường Tuấn|      00000000       |
+| Phan Trường Tuấn|      21030271       |
 
 ## Get started
 

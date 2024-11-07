@@ -1,0 +1,2 @@
+export const supabaseUrl = 'https://katopaqjavrwbqibkswd.supabase.co';
+export const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImthdG9wYXFqYXZyd2JxaWJrc3dkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjYwNDA1NTEsImV4cCI6MjA0MTYxNjU1MX0.EF4XdajXr6LEginPwpGoBNcK9B5gXCnLFZ7T3G4NCNI';

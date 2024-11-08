@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderCurve: "continuous",
-    borderRadius: theme.darius.xl,
+    borderRadius: theme.radius.xl,
   },
   text: {
     fontSize: hp(2.5),

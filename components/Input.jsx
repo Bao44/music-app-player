@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderWidth: 0.4,
     borderColor: theme.colors.text,
-    borderRadius: theme.darius.xxl,
+    borderRadius: theme.radius.xxl,
     borderCurve: "continuous",
     paddingHorizontal: 18,
     gap: 12,

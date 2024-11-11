@@ -2,7 +2,6 @@ import { decode } from "base64-arraybuffer";
 import * as FileSystem from "expo-file-system";
 import { supabase } from "../lib/supabase";
 import { supabaseUrl } from "../constants";
-import { get } from "react-native/Libraries/TurboModule/TurboModuleRegistry";
 
 export const getUserImageSrc = (imagePath) => {
   if (imagePath) {

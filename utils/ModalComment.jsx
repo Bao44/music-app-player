@@ -273,7 +273,7 @@ const ModalComment = ({ modalComment, setModalComment, user }) => {
                 <Avatar
                   uri={user?.image}
                   size={hp(5)}
-                  rounded={theme.darius.xxl}
+                  rounded={theme.radius.xxl}
                   style={{ borderWidth: 2 }}
                 />
                 <TextInput
@@ -368,7 +368,7 @@ const styles = StyleSheet.create({
     height: hp(5),
     borderRadius: 10,
     paddingLeft: 10,
-    fontSize: theme.darius.xl,
+    fontSize: theme.radius.xl,
   },
 });
 

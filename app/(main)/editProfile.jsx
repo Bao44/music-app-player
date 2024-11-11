@@ -4,7 +4,7 @@ import ScreenWrapper from "../../components/ScreenWrapper";
 import { hp, wp } from "../../helpers/common";
 import { theme } from "../../constants/theme";
 import { useAuth } from "../../contexts/AuthContext";
-import { getUserImageSrc } from "../../services/imageService";
+import { getUserImageSrc, uploadFile } from "../../services/imageService";
 import Header from "../../components/Header";
 import { Image } from "expo-image";
 import Icon from "../../assets/icons";
@@ -13,6 +13,7 @@ import Button from "../../components/Button";
 import { Alert } from "react-native";
 import { updateUser } from "../../services/userService";
 import { useRouter } from "expo-router";
+import * as ImagePicker from "expo-image-picker";
 
 const EditProfile = () => {
   const { user: currentUser, setUserData } = useAuth();
@@ -39,17 +40,39 @@ const EditProfile = () => {
     }
   }, [currentUser]);
 
-  const onPickImage = async () => {};
+  const onPickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 0.7,
+    });
+
+    if (!result.cannceled) {
+      setUser({ ...user, image: result.assets[0] });
+    }
+  };
 
   const onSubmit = async () => {
     let userData = { ...user };
     let { name, phoneNumber, address, image, bio } = userData;
-    if (!name || !phoneNumber || !address || !bio) {
+    if (!name || !phoneNumber || !address || !bio || !image) {
       Alert.alert("Profile", "Please fill all fields");
       return;
     }
 
     setLoading(true);
+
+    if (typeof image == "object") {
+      // upload image
+      let imageRes = await uploadFile("profiles", image?.uri, true);
+      
+      if (imageRes.success) {
+        userData.image = imageRes.data;
+      } else {
+        userData.image = null;
+      }
+    }
     // update user profile
     const res = await updateUser(currentUser?.id, userData);
     setLoading(false);
@@ -60,7 +83,10 @@ const EditProfile = () => {
     }
   };
 
-  let imageSource = getUserImageSrc(user.image);
+  let imageSource =
+    user.image && typeof user.image == "object"
+      ? user.image.uri
+      : getUserImageSrc(user.image);
   return (
     <ScreenWrapper bg="white">
       <View style={styles.container}>

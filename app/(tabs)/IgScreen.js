@@ -169,7 +169,7 @@ const LinkUpScreen = () => {
                 <Avatar
                   uri={user?.image}
                   size={hp(4.3)}
-                  rounded={theme.darius.sm}
+                  rounded={theme.radius.sm}
                   style={{ borderWidth: 2 }}
                 />
               </Pressable>
@@ -212,7 +212,7 @@ const styles = StyleSheet.create({
   avatarImage: {
     height: hp(4.3),
     width: hp(4.3),
-    borderRadius: theme.darius.sm,
+    borderRadius: theme.radius.sm,
     borderCurve: "continuous",
     borderColor: theme.colors.gray,
     borderWidth: 3,

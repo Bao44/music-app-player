@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
   avatar: {
     width: "100%",
     height: "100%",
-    borderRadius: theme.darius.xxl * 1.8,
+    borderRadius: theme.radius.xxl * 1.8,
     borderCurve: "continuous",
     borderWidth: 1,
     borderColor: theme.colors.darkLight,
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     borderWidth: 0.4,
     borderColor: theme.colors.text,
-    borderRadius: theme.darius.xxl,
+    borderRadius: theme.radius.xxl,
     borderCurve: "continuous",
     padding: 17,
     paddingHorizontal: 20,

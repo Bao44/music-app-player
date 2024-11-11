@@ -6,6 +6,7 @@ import { theme } from "../../constants/theme";
 import { hp, wp } from "../../helpers/common";
 import { useAuth } from "../../contexts/AuthContext";
 import Avatar from "../../components/Avatar";
+import RichTextEditor from "../../components/RichTextEditor";
 
 const newPost = () => {
   const { user } = useAuth();
@@ -28,7 +29,7 @@ const newPost = () => {
           </View>
 
           <View style={styles.textEditor}>
-
+            <RichTextEditor />
           </View>
         </ScrollView>
       </View>

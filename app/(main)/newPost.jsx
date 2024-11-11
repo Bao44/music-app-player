@@ -1,4 +1,10 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React, { useRef, useState } from "react";
 import ScreenWrapper from "../../components/ScreenWrapper";
 import Header from "../../components/Header";
@@ -8,6 +14,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import Avatar from "../../components/Avatar";
 import RichTextEditor from "../../components/RichTextEditor";
 import { useRouter } from "expo-router";
+import Icon from "../../assets/icons";
 
 const newPost = () => {
   const { user } = useAuth();
@@ -16,6 +23,10 @@ const newPost = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [file, setFile] = useState(file);
+
+  const onPick = async () => {
+
+  };
 
   return (
     <ScreenWrapper bg="white">
@@ -40,6 +51,18 @@ const newPost = () => {
               editorRef={editorRef}
               onChange={(body) => (bodyRef.current = body)}
             />
+          </View>
+
+          <View style={styles.media}>
+            <Text style={styles.addImageText}>Add to your post</Text>
+            <View style={styles.mediaIcons}>
+              <TouchableOpacity onPress={() => onPick(true)}>
+                <Icon name="image" size={30} color={theme.colors.dark} />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => onPick(false)}>
+                <Icon name="video" size={33} color={theme.colors.dark} />
+              </TouchableOpacity>
+            </View>
           </View>
         </ScrollView>
       </View>

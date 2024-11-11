@@ -51,5 +51,23 @@ const styles = StyleSheet.create({
     borderTopRightRadius: theme.radius.xl,
     borderTopLeftRadius: theme.radius.xl,
     backgroundColor: theme.colors.gray,
-  }
+  },
+  rich: {
+    minHeight: 240,
+    flex: 1,
+    borderWidth: 1.5,
+    borderTopWidth: 0,
+    borderBottomLeftRadius: theme.radius.xl,
+    borderBottomRightRadius: theme.radius.xl,
+    borderColor: theme.colors.gray,
+    padding: 5,
+  },
+  contentStyle: {
+    color: theme.colors.textDark,
+    placeholderColor: 'gray',
+  },
+  flatStyle: {
+    paddingHorizontal: 8,
+    gap: 3,
+  },
 });

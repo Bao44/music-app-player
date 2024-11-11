@@ -72,7 +72,7 @@ const UserHeader = ({ user, router, handleLogout }) => {
             <Avatar
               uri={user?.image}
               size={hp(12)}
-              rounded={theme.darius.xxl * 1.4}
+              rounded={theme.radius.xxl * 1.4}
             />
             <Pressable
               style={styles.editIcon}
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 0,
     padding: 5,
-    borderRadius: theme.darius.sm,
+    borderRadius: theme.radius.sm,
     backgroundColor: "#fee2e2",
   },
   listStyle: {

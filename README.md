@@ -1,4 +1,4 @@
-# Welcome to your Expo app 👋
+# Welcome to my Expo app 👋
 
 ## Project Music Player React-Native 🎵 with Media Social
 

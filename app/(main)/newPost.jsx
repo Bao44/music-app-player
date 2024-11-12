@@ -55,7 +55,7 @@ const newPost = () => {
 
   const isLocalFile = (file) => {
     if (!file) return null;
-    if (typeof file === "object") return true;
+    if (typeof file == "object") return true;
 
     return false;
   };
@@ -99,12 +99,12 @@ const newPost = () => {
     setLoading(true);
     let res = await createOrUpdatePost(data);
     setLoading(false);
-    if(res.success) {
+    if (res.success) {
       setFile(null);
       bodyRef.current = "";
       editorRef.current?.setContentHTML("");
       router.back();
-    }else {
+    } else {
       Alert.alert("Post", res.msg);
     }
   };

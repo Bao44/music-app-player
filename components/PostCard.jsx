@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { theme } from "../constants/theme";
 import { hp, wp } from "../helpers/common";
@@ -6,7 +6,24 @@ import Avatar from "./Avatar";
 import moment from "moment";
 import Icon from "../assets/icons";
 import RenderHTML from "react-native-render-html";
+import { getSupabaseFileUrl } from "../services/imageService";
+import { Video } from "expo-av";
 
+const textStyle = {
+  color: theme.colors.dark,
+  fontSize: hp(1.75),
+};
+const tagsStyles = {
+  div: textStyle,
+  p: textStyle,
+  ol: textStyle,
+  h1: {
+    color: theme.colors.dark,
+  },
+  h4: {
+    color: theme.colors.dark,
+  },
+};
 const PostCard = ({ item, currentUser, router, hasShadow = true }) => {
   const shadowStyles = {
     shadowOffset: {
@@ -53,9 +70,34 @@ const PostCard = ({ item, currentUser, router, hasShadow = true }) => {
       <View shadowStyles={styles.content}>
         <View style={styles.postBody}>
           {item?.body && (
-            <RenderHTML contentWidth={wp(100)} source={{ html: item?.body }} />
+            <RenderHTML
+              contentWidth={wp(100)}
+              source={{ html: item?.body }}
+              tagsStyles={tagsStyles}
+            />
           )}
         </View>
+
+        {/* post image */}
+        {item?.file && item?.file?.includes("postImages") && (
+          <Image
+            source={getSupabaseFileUrl(item?.file)}
+            transition={100}
+            style={styles.postMedia}
+            contentFit="cover"
+          />
+        )}
+
+        {/* post video */}
+        {item?.file && item?.file?.includes("postVideos") && (
+          <Video
+            style={[styles.postMedia, { height: hp(30) }]}
+            source={getSupabaseFileUrl(item?.file)}
+            useNativeControls
+            resizeMode="cover"
+            isLooping
+          />
+        )}
       </View>
     </View>
   );

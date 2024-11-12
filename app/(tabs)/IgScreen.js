@@ -1,5 +1,12 @@
-import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
-import React, { useState } from "react";
+import {
+  FlatList,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
+import React, { useEffect, useState } from "react";
 import ScreenWrapper from "../../components/ScreenWrapper";
 import { useAuth } from "../../contexts/AuthContext";
 import { theme } from "../../constants/theme";
@@ -7,48 +14,72 @@ import { hp, wp } from "../../helpers/common";
 import Icon from "../../assets/icons";
 import { useRouter } from "expo-router";
 import Avatar from "../../components/Avatar";
+import { fetchPosts } from "../../services/postService";
 
+var limit = 0;
 const LinkUpScreen = () => {
   const { user, setAuth } = useAuth();
   const router = useRouter();
 
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
+  const getPosts = async () => {
+    // call api to get posts
+    limit = limit + 10;
+    let res = await fetchPosts();
+    if (res.success) setPosts(res.data);
+  };
+
   return (
     <ScreenWrapper bg="white">
-      <ScrollView showsVerticalScrollIndicator={false}>
-        {/* View Screen HeaderHome */}
-        <View style={styles.container}>
-          {/* header */}
-          <View style={styles.header}>
-            <Text style={styles.title}>Ig</Text>
-            <View style={styles.icons}>
-              <Pressable onPress={() => router.push("notifications")}>
-                <Icon
-                  name="heart"
-                  size={hp(3.2)}
-                  strokeWidth={2}
-                  color={theme.colors.text}
-                />
-              </Pressable>
-              <Pressable onPress={() => router.push("newPost")}>
-                <Icon
-                  name="plus"
-                  size={hp(3.2)}
-                  strokeWidth={2}
-                  color={theme.colors.text}
-                />
-              </Pressable>
-              <Pressable onPress={() => router.push("profile")}>
-                <Avatar
-                  uri={user?.image}
-                  size={hp(4.3)}
-                  rounded={theme.radius.sm}
-                  style={{ borderWidth: 2 }}
-                />
-              </Pressable>
-            </View>
+      {/* View Screen HeaderHome */}
+      <View style={styles.container}>
+        {/* header */}
+        <View style={styles.header}>
+          <Text style={styles.title}>Ig</Text>
+          <View style={styles.icons}>
+            <Pressable onPress={() => router.push("notifications")}>
+              <Icon
+                name="heart"
+                size={hp(3.2)}
+                strokeWidth={2}
+                color={theme.colors.text}
+              />
+            </Pressable>
+            <Pressable onPress={() => router.push("newPost")}>
+              <Icon
+                name="plus"
+                size={hp(3.2)}
+                strokeWidth={2}
+                color={theme.colors.text}
+              />
+            </Pressable>
+            <Pressable onPress={() => router.push("profile")}>
+              <Avatar
+                uri={user?.image}
+                size={hp(4.3)}
+                rounded={theme.radius.sm}
+                style={{ borderWidth: 2 }}
+              />
+            </Pressable>
           </View>
+
+          {/* posts */}
+          <FlatList
+            data={posts}
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={styles.listStyle}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => (
+              <PostCard item={item} currentUser={user} router={router} />
+            )}
+          />
         </View>
-      </ScrollView>
+      </View>
     </ScreenWrapper>
   );
 };
@@ -84,66 +115,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 18,
-  },
-  avatarStory: {
-    height: 110,
-    width: 110,
-    margin: 10,
-    borderRadius: 100,
-    borderWidth: 3,
-    borderColor: "blue",
-  },
-  nameStory: {
-    textAlign: "center",
-    fontSize: 16,
-  },
-  headerInformation: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginTop: 20,
-  },
-  nameInformation: {
-    textAlign: "center",
-    fontSize: 18,
-    fontWeight: "bold",
-  },
-  imageInformation: {
-    height: 450,
-    width: "100%",
-    marginVertical: 10,
-    borderWidth: 3,
-    borderColor: "blue",
-  },
-  avatarInformation: {
-    height: 50,
-    width: 50,
-    marginRight: 10,
-    borderRadius: 100,
-    borderWidth: 3,
-    borderColor: "red",
-  },
-  viewIconEvent: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginVertical: 10,
-    marginHorizontal: 10,
-  },
-  nameContent: {
-    fontSize: 18,
-    fontWeight: "bold",
-  },
-  content: {
-    fontSize: 20,
-    fontWeight: "normal",
-  },
-  description: {
-    fontSize: 18,
-    lineHeight: 25,
-    marginVertical: 5,
-  },
-  showDescription: {
-    fontSize: 18,
-    color: "#1f1f1f",
   },
 });

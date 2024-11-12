@@ -1,6 +1,6 @@
-# Welcome to your Expo app 👋
+# Welcome to my Expo app 👋
 
-## Project Music Player React-Native 🎵
+## Project Music Player 🎵 with Media Social use React-Native and Supabase
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 

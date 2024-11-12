@@ -4,6 +4,8 @@ import { theme } from "../constants/theme";
 import { hp } from "../helpers/common";
 import Avatar from "./Avatar";
 import moment from "moment";
+import { TouchableOpacity } from "react-native";
+import Icon from "../assets/icons";
 
 const PostCard = ({ item, currentUser, router, hasShadow = true }) => {
   const shadowStyles = {
@@ -15,6 +17,8 @@ const PostCard = ({ item, currentUser, router, hasShadow = true }) => {
     shadowRadius: 6,
     elevation: 1,
   };
+
+  const openPostDetails = () => {};
 
   const createAt = moment(item?.created_at).format("MMM D");
 
@@ -32,6 +36,23 @@ const PostCard = ({ item, currentUser, router, hasShadow = true }) => {
             <Text style={styles.username}>{item?.user?.name}</Text>
             <Text style={styles.postTime}>{createAt}</Text>
           </View>
+        </View>
+
+        <TouchableOpacity onPress={openPostDetails}>
+          <Icon
+            name="threeDotsHorizontal"
+            size={hp(3.4)}
+            strokeWidth={3}
+            color={theme.colors.text}
+          />
+        </TouchableOpacity>
+      </View>
+
+      {/* post body & media */}
+
+      <View shadowStyles={styles.content}>
+        <View style={styles.postBody}>
+          <Text>{item?.body}</Text>
         </View>
       </View>
     </View>

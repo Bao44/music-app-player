@@ -1,7 +1,6 @@
 import {
   FlatList,
   Pressable,
-  ScrollView,
   StyleSheet,
   Text,
   View,
@@ -69,7 +68,7 @@ const LinkUpScreen = () => {
             </Pressable>
           </View>
         </View>
-        
+
         {/* posts */}
         <FlatList
           data={posts}

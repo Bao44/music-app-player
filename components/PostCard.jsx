@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import { theme } from "../constants/theme";
-import { hp } from "../helpers/common";
+import { hp, wp } from "../helpers/common";
 import Avatar from "./Avatar";
 import moment from "moment";
-import { TouchableOpacity } from "react-native";
 import Icon from "../assets/icons";
+import RenderHTML from "react-native-render-html";
 
 const PostCard = ({ item, currentUser, router, hasShadow = true }) => {
   const shadowStyles = {
@@ -52,7 +52,9 @@ const PostCard = ({ item, currentUser, router, hasShadow = true }) => {
 
       <View shadowStyles={styles.content}>
         <View style={styles.postBody}>
-          <Text>{item?.body}</Text>
+          {item?.body && (
+            <RenderHTML contentWidth={wp(100)} source={{ html: item?.body }} />
+          )}
         </View>
       </View>
     </View>

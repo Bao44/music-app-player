@@ -3,6 +3,7 @@ import React from "react";
 import { theme } from "../constants/theme";
 import { hp } from "../helpers/common";
 import Avatar from "./Avatar";
+import moment from "moment";
 
 const PostCard = ({ item, currentUser, router, hasShadow = true }) => {
   const shadowStyles = {
@@ -14,6 +15,9 @@ const PostCard = ({ item, currentUser, router, hasShadow = true }) => {
     shadowRadius: 6,
     elevation: 1,
   };
+
+  const createAt = moment(item?.created_at).format("MMM D");
+
   return (
     <View style={[styles.container, hasShadow && shadowStyles]}>
       <View style={styles.header}>
@@ -26,7 +30,7 @@ const PostCard = ({ item, currentUser, router, hasShadow = true }) => {
           />
           <View style={{ gap: 2 }}>
             <Text style={styles.username}>{item?.user?.name}</Text>
-            <Text style={styles.postTime}>{item?.created_at}</Text>
+            <Text style={styles.postTime}>{createAt}</Text>
           </View>
         </View>
       </View>

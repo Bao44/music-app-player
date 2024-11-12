@@ -48,7 +48,7 @@ const EditProfile = () => {
       quality: 0.7,
     });
 
-    if (!result.cannceled) {
+    if (!result.canceled) {
       setUser({ ...user, image: result.assets[0] });
     }
   };

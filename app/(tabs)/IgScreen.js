@@ -15,6 +15,7 @@ import Icon from "../../assets/icons";
 import { useRouter } from "expo-router";
 import Avatar from "../../components/Avatar";
 import { fetchPosts } from "../../services/postService";
+import PostCard from "../../components/PostCard";
 
 var limit = 0;
 const LinkUpScreen = () => {

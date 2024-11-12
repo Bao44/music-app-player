@@ -68,18 +68,18 @@ const LinkUpScreen = () => {
               />
             </Pressable>
           </View>
-
-          {/* posts */}
-          <FlatList
-            data={posts}
-            showsVerticalScrollIndicator={false}
-            contentContainerStyle={styles.listStyle}
-            keyExtractor={(item) => item.id.toString()}
-            renderItem={({ item }) => (
-              <PostCard item={item} currentUser={user} router={router} />
-            )}
-          />
         </View>
+        
+        {/* posts */}
+        <FlatList
+          data={posts}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.listStyle}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => (
+            <PostCard item={item} currentUser={user} router={router} />
+          )}
+        />
       </View>
     </ScreenWrapper>
   );
@@ -116,5 +116,30 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 18,
+  },
+  listStyle: {
+    paddingTop: 20,
+    paddingHorizontal: wp(4),
+  },
+  noPosts: {
+    fontSize: hp(2),
+    textAlign: "center",
+    color: theme.colors.text,
+  },
+  pill: {
+    position: "absolute",
+    right: -10,
+    top: -4,
+    height: hp(2.2),
+    width: hp(2.2),
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 20,
+    borderStartColor: theme.colors.roseLight,
+  },
+  pillText: {
+    color: "white",
+    fontSize: hp(1.2),
+    fontWeight: theme.fonts.bold,
   },
 });

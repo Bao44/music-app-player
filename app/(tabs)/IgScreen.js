@@ -10,6 +10,8 @@ import Avatar from "../../components/Avatar";
 import { fetchPosts } from "../../services/postService";
 import PostCard from "../../components/PostCard";
 import Loading from "../../components/Loading";
+import { supabase } from "../../lib/supabase";
+import { getUserData } from "../../services/userService";
 
 var limit = 0;
 const LinkUpScreen = () => {
@@ -17,16 +19,47 @@ const LinkUpScreen = () => {
   const router = useRouter();
 
   const [posts, setPosts] = useState([]);
+  const [hasMore, setHasMore] = useState(true);
+
+  const handlePostEvent = async (payload) => {
+    if (payload.eventType === "INSERT" && payload?.new?.id) {
+      let newPost = { ...payload.new };
+      let res = await getUserData(newPost.userId);
+      newPost.user = res.success ? res.data : {};
+      setPosts((prevPosts) => [newPost, ...prevPosts]);
+    }
+  };
 
   useEffect(() => {
-    getPosts();
+    let postChannel = supabase
+      .channel("posts")
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "posts" },
+        handlePostEvent
+      )
+      .subscribe();
+
+    // getPosts();
+
+    return () => {
+      supabase.removeChannel(postChannel);
+    };
   }, []);
 
   const getPosts = async () => {
     // call api to get posts
-    limit = limit + 10;
-    let res = await fetchPosts();
-    if (res.success) setPosts(res.data);
+    if (!hasMore) return null;
+
+    limit = limit + 4;
+
+    let res = await fetchPosts(limit);
+    if (res.success) {
+      if (posts.length === res.data.length) {
+        setHasMore(false);
+      }
+      setPosts(res.data);
+    }
   };
 
   return (
@@ -73,10 +106,20 @@ const LinkUpScreen = () => {
           renderItem={({ item }) => (
             <PostCard item={item} currentUser={user} router={router} />
           )}
+          onEndReached={() => {
+            getPosts();
+          }}
+          onEndReachedThreshold={0}
           ListFooterComponent={
-            <View style={{ marginVertical: posts.length == 0 ? 200 : 30 }}>
-              <Loading />
-            </View>
+            hasMore ? (
+              <View style={{ marginVertical: posts.length == 0 ? 200 : 30 }}>
+                <Loading />
+              </View>
+            ) : (
+              <View style={{ marginVertical: 30 }}>
+                <Text style={styles.noPosts}>No more posts</Text>
+              </View>
+            )
           }
         />
       </View>

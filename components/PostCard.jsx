@@ -36,11 +36,12 @@ const PostCard = ({ item, currentUser, router, hasShadow = true }) => {
   };
 
   const openPostDetails = () => {};
+  const onLike = async() => {};
 
   const createAt = moment(item?.created_at).format("MMM D");
-
   const likes = [];
   const liked = false;
+
 
   return (
     <View style={[styles.container, hasShadow && shadowStyles]}>
@@ -106,7 +107,7 @@ const PostCard = ({ item, currentUser, router, hasShadow = true }) => {
       {/* like, comment & share */}
       <View style={styles.footer}>
         <View style={styles.footerButton}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={onLike}>
             <Icon
               name="heart"
               size={24}

@@ -41,7 +41,6 @@ const PostCard = ({ item, currentUser, router, hasShadow = true }) => {
 
   const likes = [];
   const liked = false;
-  //4.21.53
 
   return (
     <View style={[styles.container, hasShadow && shadowStyles]}>

@@ -1,10 +1,4 @@
-import {
-  FlatList,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import ScreenWrapper from "../../components/ScreenWrapper";
 import { useAuth } from "../../contexts/AuthContext";
@@ -15,6 +9,7 @@ import { useRouter } from "expo-router";
 import Avatar from "../../components/Avatar";
 import { fetchPosts } from "../../services/postService";
 import PostCard from "../../components/PostCard";
+import Loading from "../../components/Loading";
 
 var limit = 0;
 const LinkUpScreen = () => {
@@ -78,6 +73,11 @@ const LinkUpScreen = () => {
           renderItem={({ item }) => (
             <PostCard item={item} currentUser={user} router={router} />
           )}
+          ListFooterComponent={
+            <View style={{ marginVertical: posts.length == 0 ? 200 : 30 }}>
+              <Loading />
+            </View>
+          }
         />
       </View>
     </ScreenWrapper>

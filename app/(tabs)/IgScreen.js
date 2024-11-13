@@ -61,7 +61,7 @@ const LinkUpScreen = () => {
       setPosts(res.data);
     }
   };
-//4 38 31
+
   return (
     <ScreenWrapper bg="white">
       {/* View Screen HeaderHome */}

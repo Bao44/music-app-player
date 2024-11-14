@@ -37,7 +37,8 @@ export const fetchPosts = async (limit = 10) => {
       .select(`
           *,
           user: users (id, name, image),
-          postLikes (*)
+          postLikes (*),
+          comments (count)
         `)
       .order("created_at", { ascending: false })
       .limit(limit);
@@ -50,6 +51,32 @@ export const fetchPosts = async (limit = 10) => {
     return { success: true, data: data };
   } catch (error) {
     console.log("fetchPosts error: ", error);
+    return { success: false, msg: "Could not fetch your post" };
+  }
+};
+
+export const fetchPostDetails = async (postId) => {
+  try {
+    const { data, error } = await supabase
+      .from("posts")
+      .select(`
+          *,
+          user: users (id, name, image),
+          postLikes (*),
+          comments (*, user: users (id, name, image))
+        `)
+      .eq("id", postId)
+      .order("created_at", { ascending: false, foreignTable: "comments" })
+      .single();
+
+    if (error) {
+      console.log("fetchPostsDetails error: ", error);
+      return { success: false, msg: "Could not fetch your post" };
+    }
+
+    return { success: true, data: data };
+  } catch (error) {
+    console.log("fetchPostsDetails error: ", error);
     return { success: false, msg: "Could not fetch your post" };
   }
 };
@@ -95,5 +122,27 @@ export const removePostLike = async (postId, userId) => {
   } catch (error) {
     console.log("postLike error: ", error);
     return { success: false, msg: "Could not remove the post like" };
+  }
+};
+
+export const createComment = async (comment) => {
+  try {
+    
+    const {data, error} = await supabase
+    .from("comments")
+    .insert(comment)
+    .select()
+    .single();
+
+    if (error) {
+      console.log("comment error: ", error);
+      return { success: false, msg: "Could not create your comment" };
+    }
+
+    return { success: true, data: data };
+
+  } catch (error) {
+    console.log("comment error: ", error);
+    return { success: false, msg: "Could not create your comment" };
   }
 };

@@ -1,9 +1,8 @@
 import HomeScreen from "./app/(tabs)/HomeScreen";
 import SongScreen from "./app/(tabs)/SongScreen";
-import Artists from "./app/(tabs)/Artists";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -67,21 +66,6 @@ function BottomTabs() {
                 <FontAwesome5 name="globe-asia" size={24} color="white" />
               ) : (
                 <FontAwesome5 name="globe-asia" size={24} color="gray" />
-              ),
-          }}
-        />
-        <Tab.Screen
-          name="Artists"
-          component={Artists}
-          options={{
-            tabBarLabel: "Artists",
-            headerShown: false,
-            tabBarLabelStyle: { color: "white", fontSize: 14 },
-            tabBarIcon: ({ focused }) =>
-              focused ? (
-                <FontAwesome6 name="user-group" size={20} color="white" />
-              ) : (
-                <FontAwesome6 name="user-group" size={20} color="gray" />
               ),
           }}
         />

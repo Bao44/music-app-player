@@ -20,6 +20,7 @@ const LinkUpScreen = () => {
 
   const [posts, setPosts] = useState([]);
   const [hasMore, setHasMore] = useState(true);
+  const [notificationCount, setNotificationCount] = useState(0);
 
   const handlePostEvent = async (payload) => {
     if (payload.eventType === "INSERT" && payload?.new?.id) {
@@ -54,6 +55,12 @@ const LinkUpScreen = () => {
     }
   };
 
+  const handleNewNotification = async (payload) => {
+    if (payload.eventType === "INSERT" && payload.new.id) {
+      setNotificationCount((prevCount) => prevCount + 1);
+    }
+  };
+
   useEffect(() => {
     let postChannel = supabase
       .channel("posts")
@@ -66,8 +73,23 @@ const LinkUpScreen = () => {
 
     // getPosts();
 
+    let notificationChannel = supabase
+      .channel("notifications")
+      .on(
+        "postgres_changes",
+        {
+          event: "INSERT",
+          schema: "public",
+          table: "notifications",
+          filter: `receiverId=eq.${user.id}`,
+        },
+        handleNewNotification
+      )
+      .subscribe();
+
     return () => {
       supabase.removeChannel(postChannel);
+      supabase.removeChannel(notificationChannel);
     };
   }, []);
 
@@ -88,19 +110,27 @@ const LinkUpScreen = () => {
 
   return (
     <ScreenWrapper bg="white">
-      {/* View Screen HeaderHome */}
+      {/* View Screen Header */}
       <View style={styles.container}>
         {/* header */}
         <View style={styles.header}>
-          <Text style={styles.title}>Ig</Text>
+          <Text style={styles.title}>IG</Text>
           <View style={styles.icons}>
-            <Pressable onPress={() => router.push("notifications")}>
+            <Pressable onPress={() => {
+              setNotificationCount(0);
+              router.push("notifications");
+            }}>
               <Icon
                 name="heart"
                 size={hp(3.2)}
                 strokeWidth={2}
                 color={theme.colors.text}
               />
+              {notificationCount > 0 && (
+                <View style={styles.pill}>
+                  <Text style={styles.pillText}>{notificationCount}</Text>
+                </View>
+              )}
             </Pressable>
             <Pressable onPress={() => router.push("newPost")}>
               <Icon

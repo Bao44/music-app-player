@@ -29,7 +29,6 @@ const Profile = () => {
   const [hasMore, setHasMore] = useState(true);
 
   const onLogout = async () => {
-    // setAuth(null);
     const { error } = await supabase.auth.signOut();
     if (error) {
       Alert.alert("Error", "Error signing out!");

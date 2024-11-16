@@ -75,7 +75,7 @@ const LinkUpScreen = () => {
     // call api to get posts
     if (!hasMore) return null;
 
-    limit = limit + 4;
+    limit = limit + 10;
 
     let res = await fetchPosts(limit);
     if (res.success) {

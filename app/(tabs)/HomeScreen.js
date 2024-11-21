@@ -123,14 +123,14 @@ const Home = () => {
           }}
         >
           <TouchableOpacity style={styles.pressableHeader}>
-            <Text style={styles.pressableHeaderText}>Tất cả</Text>
+            <Text style={styles.pressableHeaderText}>All</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.pressableHeader}
             onPress={() => router.push("SongScreen")}
           >
-            <Text style={styles.pressableHeaderText}>Nhạc</Text>
+            <Text style={styles.pressableHeaderText}>Song</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.pressableHeader}>
@@ -138,7 +138,7 @@ const Home = () => {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.pressableHeader}>
-            <Text style={styles.pressableHeaderText}>Ca sĩ</Text>
+            <Text style={styles.pressableHeaderText}>Singer</Text>
           </TouchableOpacity>
         </View>
 

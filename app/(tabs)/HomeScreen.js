@@ -194,7 +194,7 @@ const Home = () => {
               source={require("../../assets/images/zoro.jpg")}
             />
             <View>
-              <Text style={styles.pressableLikeSongText}>Nhạc trữ tình</Text>
+              <Text style={styles.pressableLikeSongText}>Lyrical music</Text>
             </View>
           </View>
 
@@ -204,7 +204,7 @@ const Home = () => {
               source={require("../../assets/images/zoro.jpg")}
             />
             <View>
-              <Text style={styles.pressableLikeSongText}>Nhạc 9x</Text>
+              <Text style={styles.pressableLikeSongText}>9x music</Text>
             </View>
           </View>
         </View>
@@ -239,7 +239,7 @@ const Home = () => {
 
         <View style={{ height: 20 }} />
 
-        <Text style={styles.titleOptions}>Tuyển tập hàng đầu của bạn</Text>
+        <Text style={styles.titleOptions}>Trending albums</Text>
         <FlatList
           data={musicData}
           renderItem={renderItem}
@@ -253,7 +253,7 @@ const Home = () => {
             marginTop: 15,
           }}
         >
-          <Text style={styles.titleOptions}>Dành cho bạn</Text>
+          <Text style={styles.titleOptions}>For you</Text>
           <View style={{ marginRight: 10, marginTop: 10 }}>
             {/* Nút để hiện toàn bộ danh sách */}
             {!showAllFor && (

@@ -90,7 +90,7 @@ const Home = () => {
 
   return (
     <ScreenWrapper bg="#130c1c">
-      <ScrollView>
+      <ScrollView style={{paddingHorizontal: 10}}>
         {/* View Screen HeaderHome */}
         <View style={styles.container}>
           {/* header */}

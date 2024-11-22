@@ -223,7 +223,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fee2e2",
   },
   listStyle: {
-    paddingHorizontal: wp(4),
+    paddingHorizontal: wp(2),
     paddingBottom: 30,
   },
   noPosts: {

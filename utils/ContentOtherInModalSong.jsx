@@ -16,19 +16,19 @@ const ContentOther = ({ currentTrack }) => {
               showsHorizontalScrollIndicator={false}
             >
               <Image
-                source={{ uri: currentTrack?.artwork }}
+                source={{ uri: currentTrack?.images.image1 }}
                 style={styles.viewImage}
               />
               <Image
-                source={{ uri: currentTrack?.artwork }}
+                source={{ uri: currentTrack?.images.image2 }}
                 style={styles.viewImage}
               />
               <Image
-                source={{ uri: currentTrack?.artwork }}
+                source={{ uri: currentTrack?.images.image3 }}
                 style={styles.viewImage}
               />
               <Image
-                source={{ uri: currentTrack?.artwork }}
+                source={{ uri: currentTrack?.images.image4 }}
                 style={styles.viewImage}
               />
             </ScrollView>
@@ -74,7 +74,7 @@ const ContentOther = ({ currentTrack }) => {
       <View style={styles.container}>
         <View>
           <Image
-            source={{ uri: currentTrack?.artwork }}
+            source={{ uri: currentTrack?.images.background }}
             style={styles.viewImageContent3}
           />
           <View style={styles.viewOpacityImage} />

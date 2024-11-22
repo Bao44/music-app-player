@@ -10,7 +10,7 @@ const Lyrics = ({ currentTrack }) => {
   };
   return (
     <View style={styles.viewLyrics}>
-      <Text style={styles.titleLyrics}>Lời bài hát</Text>
+      <Text style={styles.titleLyrics}>Lyrics</Text>
       <View style={{ padding: 10 }}>
         <Text
           style={styles.textLyrics}
@@ -22,7 +22,7 @@ const Lyrics = ({ currentTrack }) => {
       </View>
       <TouchableOpacity onPress={toggleLyrics} style={styles.button}>
         <Text style={styles.buttonText}>
-          {showLyrics ? "Ẩn lời bài hát" : "Xem thêm lời bài hát"}
+          {showLyrics ? "Hide lyrics" : "See more lyrics"}
         </Text>
       </TouchableOpacity>
     </View>

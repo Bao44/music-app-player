@@ -51,7 +51,7 @@ const Modals = ({
                 <Entypo name="chevron-small-down" size={45} color="white" />
               </TouchableOpacity>
               <Text style={styles.textHeaderModalTitle}>
-                ĐANG PHÁT TỪ NGHỆ SĨ
+                PLAYING FROM THE ARTIST
               </Text>
               <Text style={styles.textHeaderModalArtist}>
                 {currentTrack?.artist}

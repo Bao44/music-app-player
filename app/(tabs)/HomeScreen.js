@@ -173,7 +173,7 @@ const Home = () => {
           <View style={styles.pressableLikeSong}>
             <Image
               style={{ width: 55, height: 55 }}
-              source={require("../../assets/images/zoro.jpg")}
+              source={require("../../assets/images/obi.jpg")}
             />
             <View>
               <Text style={styles.pressableLikeSongText}>Hiphop</Text>
@@ -191,7 +191,7 @@ const Home = () => {
           <View style={styles.pressableLikeSong}>
             <Image
               style={{ width: 55, height: 55 }}
-              source={require("../../assets/images/zoro.jpg")}
+              source={require("../../assets/images/tatcahoac.jpg")}
             />
             <View>
               <Text style={styles.pressableLikeSongText}>Lyrical music</Text>
@@ -219,7 +219,7 @@ const Home = () => {
           <View style={styles.pressableLikeSong}>
             <Image
               style={{ width: 55, height: 55 }}
-              source={require("../../assets/images/zoro.jpg")}
+              source={require("../../assets/images/luabang4.jpg")}
             />
             <View>
               <Text style={styles.pressableLikeSongText}>Kpop</Text>
@@ -229,7 +229,7 @@ const Home = () => {
           <View style={styles.pressableLikeSong}>
             <Image
               style={{ width: 55, height: 55 }}
-              source={require("../../assets/images/zoro.jpg")}
+              source={require("../../assets/images/luffy1.jpg")}
             />
             <View>
               <Text style={styles.pressableLikeSongText}>US-UK</Text>
@@ -253,19 +253,19 @@ const Home = () => {
             marginTop: 15,
           }}
         >
-          <Text style={styles.titleOptions}>For you</Text>
+          <Text style={styles.titleOptions}>Suggestions for you</Text>
           <View style={{ marginRight: 10, marginTop: 10 }}>
             {/* Nút để hiện toàn bộ danh sách */}
             {!showAllFor && (
               <TouchableOpacity onPress={handleToggleShowAllFor}>
-                <Text style={{ color: "white" }}>Xem thêm</Text>
+                <Text style={{ color: "white" }}>See all</Text>
               </TouchableOpacity>
             )}
 
             {/* Nút để ẩn toàn bộ danh sách nếu đã hiện */}
             {showAllFor && (
               <TouchableOpacity onPress={handleToggleShowAllFor}>
-                <Text style={{ color: "white" }}>Ẩn bớt</Text>
+                <Text style={{ color: "white" }}>Hide</Text>
               </TouchableOpacity>
             )}
           </View>
@@ -280,19 +280,19 @@ const Home = () => {
         <View style={{ height: 20 }} />
 
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-          <Text style={styles.titleOptions}>Nghe gần đây</Text>
+          <Text style={styles.titleOptions}>Listen recently</Text>
           <View style={{ marginRight: 10, marginTop: 10 }}>
             {/* Nút để hiện toàn bộ danh sách */}
             {!showAllRecent && (
               <TouchableOpacity onPress={handleToggleShowAllRecent}>
-                <Text style={{ color: "white" }}>Xem thêm</Text>
+                <Text style={{ color: "white" }}>See all</Text>
               </TouchableOpacity>
             )}
 
             {/* Nút để ẩn toàn bộ danh sách nếu đã hiện */}
             {showAllRecent && (
               <TouchableOpacity onPress={handleToggleShowAllRecent}>
-                <Text style={{ color: "white" }}>Ẩn bớt</Text>
+                <Text style={{ color: "white" }}>Hide</Text>
               </TouchableOpacity>
             )}
           </View>
@@ -322,18 +322,18 @@ const Home = () => {
         <View style={{ height: 20 }} />
 
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-          <Text style={styles.titleOptions}>Có thể bạn muốn nghe</Text>
+          <Text style={styles.titleOptions}>You might want to listen</Text>
           {/* Nút để hiện toàn bộ danh sách */}
           {!showAllWantLister && (
             <TouchableOpacity onPress={handleToggleShowAllWantLister}>
-              <Text style={{ color: "white" }}>Xem thêm</Text>
+              <Text style={{ color: "white" }}>See all</Text>
             </TouchableOpacity>
           )}
 
           {/* Nút để ẩn toàn bộ danh sách nếu đã hiện */}
           {showAllWantLister && (
             <TouchableOpacity onPress={handleToggleShowAllWantLister}>
-              <Text style={{ color: "white" }}>Ẩn bớt</Text>
+              <Text style={{ color: "white" }}>Hide</Text>
             </TouchableOpacity>
           )}
         </View>
@@ -352,14 +352,14 @@ const Home = () => {
             {/* Nút để hiện toàn bộ danh sách */}
             {!showAllChill && (
               <TouchableOpacity onPress={handleToggleShowAllChill}>
-                <Text style={{ color: "white" }}>Xem thêm</Text>
+                <Text style={{ color: "white" }}>See all</Text>
               </TouchableOpacity>
             )}
 
             {/* Nút để ẩn toàn bộ danh sách nếu đã hiện */}
             {showAllChill && (
               <TouchableOpacity onPress={handleToggleShowAllChill}>
-                <Text style={{ color: "white" }}>Ẩn bớt</Text>
+                <Text style={{ color: "white" }}>Hide</Text>
               </TouchableOpacity>
             )}
           </View>
@@ -373,43 +373,43 @@ const Home = () => {
 
         <View style={{ height: 20 }} />
 
-        <Text style={styles.titleOptions}>Chủ đề & thể loại</Text>
+        <Text style={styles.titleOptions}>Topics & categories</Text>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <TouchableOpacity
             style={[styles.viewTopic, { backgroundColor: "#EF476F" }]}
           >
-            <Text style={styles.textViewTopic}>Nhạc Rap</Text>
+            <Text style={styles.textViewTopic}>Rap</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={[styles.viewTopic, { backgroundColor: "blue" }]}
           >
-            <Text style={styles.textViewTopic}>Nhạc GenZ</Text>
+            <Text style={styles.textViewTopic}>GenZ</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={[styles.viewTopic, { backgroundColor: "#718355" }]}
           >
-            <Text style={styles.textViewTopic}>Nhạc US-UK</Text>
+            <Text style={styles.textViewTopic}>US-UK</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={[styles.viewTopic, { backgroundColor: "purple" }]}
           >
-            <Text style={styles.textViewTopic}>Nhạc Rock</Text>
+            <Text style={styles.textViewTopic}>Rock</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={[styles.viewTopic, { backgroundColor: "#0B6477" }]}
           >
-            <Text style={styles.textViewTopic}>Nhạc Chill</Text>
+            <Text style={styles.textViewTopic}>Chill</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={[styles.viewTopic, { backgroundColor: "green" }]}
           >
-            <Text style={styles.textViewTopic}>Nhạc Relax</Text>
+            <Text style={styles.textViewTopic}>Relax</Text>
           </TouchableOpacity>
         </ScrollView>
 
         <View style={{ height: 20 }} />
 
-        <Text style={styles.titleOptions}>Mới phát hành</Text>
+        <Text style={styles.titleOptions}>Newly released</Text>
         <FlatList
           data={musicData}
           renderItem={renderItem}
@@ -425,14 +425,14 @@ const Home = () => {
             {/* Nút để hiện toàn bộ danh sách */}
             {!showAllAlbum && (
               <TouchableOpacity onPress={handleToggleShowAllAlbum}>
-                <Text style={{ color: "white" }}>Xem thêm</Text>
+                <Text style={{ color: "white" }}>See all</Text>
               </TouchableOpacity>
             )}
 
             {/* Nút để ẩn toàn bộ danh sách nếu đã hiện */}
             {showAllAlbum && (
               <TouchableOpacity onPress={handleToggleShowAllAlbum}>
-                <Text style={{ color: "white" }}>Ẩn bớt</Text>
+                <Text style={{ color: "white" }}>Hide</Text>
               </TouchableOpacity>
             )}
           </View>
@@ -446,19 +446,19 @@ const Home = () => {
 
         <View style={{ height: 20 }} />
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-          <Text style={styles.titleOptions}>Radio nổi bật</Text>
+          <Text style={styles.titleOptions}>Outstanding radio</Text>
           <View style={{ marginRight: 10, marginTop: 10 }}>
             {/* Nút để hiện toàn bộ danh sách */}
             {!showAllRadio && (
               <TouchableOpacity onPress={handleToggleShowAllRadio}>
-                <Text style={{ color: "white" }}>Xem thêm</Text>
+                <Text style={{ color: "white" }}>See all</Text>
               </TouchableOpacity>
             )}
 
             {/* Nút để ẩn toàn bộ danh sách nếu đã hiện */}
             {showAllRadio && (
               <TouchableOpacity onPress={handleToggleShowAllRadio}>
-                <Text style={{ color: "white" }}>Ẩn bớt</Text>
+                <Text style={{ color: "white" }}>Hide</Text>
               </TouchableOpacity>
             )}
           </View>

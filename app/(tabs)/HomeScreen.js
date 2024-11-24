@@ -138,7 +138,7 @@ const Home = () => {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.pressableHeader}
-            onPress={() => router.push("artistScreen")}
+            onPress={() => router.push("artist")}
           >
             <Text style={styles.pressableHeaderText}>Singer</Text>
           </TouchableOpacity>

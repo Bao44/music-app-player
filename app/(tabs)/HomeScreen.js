@@ -14,7 +14,6 @@ import { useAuth } from "../../contexts/AuthContext";
 import { supabase } from "../../lib/supabase";
 import { theme } from "../../constants/theme";
 import { hp, wp } from "../../helpers/common";
-import Icon from "../../assets/icons";
 import { useRouter } from "expo-router";
 import Avatar from "../../components/Avatar";
 import musicData from "../../assets/data/library.json";

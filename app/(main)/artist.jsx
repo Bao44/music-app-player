@@ -10,13 +10,13 @@ import Header from "../../components/Header";
 import ScreenWrapper from "../../components/ScreenWrapper";
 import tracks from "../../assets/data/library.json";
 import { useRouter } from "expo-router";
+import { theme } from "../../constants/theme";
 
 const ArtistScreen = () => {
   const router = useRouter();
   const uniqueArtists = Array.from(new Set(tracks.map((item) => item.artist)));
 
   const handleArtistPress = (artist) => {
-    // Lưu artist trong route params
     router.push({
       pathname: "artistDetails",
       params: { artist },
@@ -29,11 +29,15 @@ const ArtistScreen = () => {
         <Header title="Artist" />
       </View>
       <FlatList
+        style={{ paddingHorizontal: 10 }}
         data={uniqueArtists}
         keyExtractor={(item) => item}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => handleArtistPress(item)}>
-            <View style={{ padding: 10 }}>
+          <TouchableOpacity
+            style={styles.container}
+            onPress={() => handleArtistPress(item)}
+          >
+            <View>
               <Text style={styles.artistName}>{item}</Text>
             </View>
           </TouchableOpacity>
@@ -46,6 +50,12 @@ const ArtistScreen = () => {
 export default ArtistScreen;
 
 const styles = StyleSheet.create({
+  container: {
+    padding: 20,
+    marginVertical: 5,
+    backgroundColor: theme.colors.darkLight,
+    borderRadius: 20,
+  },
   artistName: {
     fontSize: 18,
     fontWeight: "bold",

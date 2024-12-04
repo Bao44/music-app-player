@@ -14,15 +14,15 @@ import useMusicPlayer from "../../events/EventListSong";
 import FloatingPlayer from "../../utils/FloatingPlayer";
 import Modals from "../../utils/ModalSong";
 import { Image } from "react-native";
+import { theme } from "../../constants/theme";
+import Icon from "../../assets/icons";
+import { hp } from "../../helpers/common";
 
 const ArtistDetails = () => {
   const { artist } = useLocalSearchParams();
   const artistTracks = tracks.filter((track) => track.artist === artist);
   const {
     sound,
-    setSearchQuery,
-    handleSearch,
-    setFilteredMusic,
     isPlaying,
     currentTrack,
     modalVisible,
@@ -45,16 +45,26 @@ const ArtistDetails = () => {
       <View style={{ paddingHorizontal: 10 }}>
         <Header title={artist} />
         <Image
-          source={{ uri: artistTracks[0]?.artwork}}
+          source={{ uri: artistTracks[0]?.artwork }}
           style={styles.artwork_Modal}
         />
         <FlatList
+          scrollEnabled={false}
           data={artistTracks}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
             <TouchableOpacity onPress={() => handleTrackPress(item)}>
-              <View style={styles.trackItem}>
-                <Text style={styles.trackName}>{item.title}</Text>
+              <View style={styles.container}>
+                <View>
+                  <Text style={styles.trackName}>{item.title}</Text>
+                  <Text style={{ fontSize: 16 }}>{item.artist}</Text>
+                </View>
+                <Icon
+                  name="threeDotsHorizontal"
+                  size={hp(3.4)}
+                  strokeWidth={3}
+                  color={theme.colors.text}
+                />
               </View>
             </TouchableOpacity>
           )}
@@ -91,13 +101,24 @@ const ArtistDetails = () => {
 export default ArtistDetails;
 
 const styles = StyleSheet.create({
+  container: {
+    padding: 18,
+    marginHorizontal: 20,
+    marginVertical: 8,
+    backgroundColor: theme.colors.darkLight,
+    borderRadius: 20,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
   trackItem: {
     padding: 10,
     borderBottomWidth: 1,
     borderBottomColor: "#ddd",
   },
   trackName: {
-    fontSize: 16,
+    fontSize: 20,
+    fontWeight: "bold",
   },
   musicControl: {
     position: "absolute",
@@ -112,7 +133,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
     width: 380,
     height: 380,
-    borderRadius: 15,
+    borderRadius: 500,
     alignSelf: "center",
+    marginBottom: 30,
   },
 });

@@ -11,6 +11,12 @@ const useMusicPlayer = (musicData) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [isShuffle, setIsShuffle] = useState(false);
 
+  // fetch music data
+  useEffect(() => {
+    setFilteredMusic(musicData);
+  }, [musicData]);
+  
+
   // dọn dẹp khi component bị hủy
   useEffect(() => {
     return () => {

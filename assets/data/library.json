@@ -21,7 +21,7 @@
     "url": "https://audio.jukehost.co.uk/priWy2vYsWODmQiM6KevNYVLpPJGPZGd",
     "title": "Memories",
     "artist": "TrackTribe",
-    "artwork": "https://i.pinimg.com/736x/c4/a5/1c/c4a51c248437a7339d48b2053074edf2.jpg",
+    "artwork": "https://i.pinimg.com/736x/c6/7c/56/c67c56a32cf14e19b57156c43ffdb663.jpg",
     "images": {
       "image1": "https://gcs.tripi.vn/public-tripi/tripi-feed/img/474051sHX/hinh-anh-obito-de-thuong_034826286.jpg",
       "image2": "https://i.pinimg.com/236x/62/2a/49/622a49fd8d7fa55fad8c32a3c22009a6.jpg",
@@ -217,5 +217,55 @@
     "rating": 4,
     "playlist": ["Chill 🌱"],
     "lyrics": "..."
+  },
+  {
+    "id": 14,
+    "url": "https://audio.jukehost.co.uk/JlkZ60upLXGXNQiPiS6xk0hNfdNIaqr1",
+    "title": "Trình",
+    "artist": "HIEUTHUHAI",
+    "artwork": "https://i.pinimg.com/736x/0f/ee/06/0fee067605dcaa92e9628e5b06859ed4.jpg",
+    "images": {
+      "image1": "https://obi.vn/wp-content/uploads/2023/02/anh-sasuke_13.jpg",
+      "image2": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTClb_6bt5Q5BpfmCJFvX8Czm2QRoTmRPEIHqQKvbXpLOe2t2RVpmSKA-p91CwpK7y1a3Y&usqp=CAU",
+      "image3": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCH2-93v-DoXtzCrm_UMf-nshNLBCws7O38g6wVcm6hrRPJUfZYg4xLSLtZf9l78_m6GI&usqp=CAU",
+      "image4": "https://static.wikia.nocookie.net/naruto/images/d/d2/Sasuke_child.png/revision/latest?cb=20141229092907&path-prefix=id",
+      "background": "https://haycafe.vn/wp-content/uploads/2022/08/Hinh-nen-may-tinh-4K-toi-gian-800x450.jpg"
+    },
+    "rating": 4,
+    "playlist": ["Rap 🎤"]
+    },
+  {
+    "id": 15,
+    "url": "https://audio.jukehost.co.uk/6FE4ODLMI52xb01fVS7Q0L95D4PpDxSL",
+    "title": "Mất Kết Nối",
+    "artist": "Dương Domic",
+    "artwork": "https://i.pinimg.com/236x/b4/38/b1/b438b16774a58cb5fc53398617f6f60d.jpg",
+    "images": {
+      "image1": "https://i.pinimg.com/236x/8f/7d/a2/8f7da266898450424d3e6ba6eb86c04f.jpg",
+      "image2": "https://i.pinimg.com/736x/2f/40/96/2f4096e2aca9a96afbb0c34278f11941.jpg",
+      "image3": "https://preview.redd.it/jqpo48oxzof61.jpg?width=640&crop=smart&auto=webp&s=a4fccf4b46df4f935f093ee2ce3b221498a6af4a",
+      "image4": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlO08fH5rTWZyCj7-KhWsRFRfQ9lcy8RHuQFWoQY6_zz0GjWm2Jkb4gDa2LU-o6sNCUqE&usqp=CAU",
+      "background": "https://minhducpc.vn/uploads/images/hinh-nen-may-tinh/hinh-nen-may-tinh-chill-4k22.jpg"
+    },
+    "rating": 1,
+    "playlist": ["Instrumental 🎵"],
+    "lyrics": "..."
+  },
+  {
+    "id": 16,
+    "url": "https://audio.jukehost.co.uk/GL2iPg5Z8Tuc7300qOi7xS3Dtaq3Vg61",
+    "title": "Hãy Trao Cho Anh",
+    "artist": "BẢO",
+    "artwork": "https://i.pinimg.com/736x/c4/a5/1c/c4a51c248437a7339d48b2053074edf2.jpg",
+    "images": {
+      "image1": "https://gcs.tripi.vn/public-tripi/tripi-feed/img/474051sHX/hinh-anh-obito-de-thuong_034826286.jpg",
+      "image2": "https://i.pinimg.com/236x/62/2a/49/622a49fd8d7fa55fad8c32a3c22009a6.jpg",
+      "image3": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwCTjWuOwCWtPd_09P8mtNfhVvzyzAVorQJicHQP8EHqFWVvdX6dLTFw6dIftCqTgoqrY&usqp=CAU",
+      "image4": "https://i.pinimg.com/736x/c4/a5/1c/c4a51c248437a7339d48b2053074edf2.jpg",
+      "background": "https://img.freepik.com/premium-photo/digital-art-album-art_31965-136151.jpg"
+    },
+    "rating": 5,
+    "playlist": ["Instrumental 🎵"],
+    "lyrics": "Here's to the ones that we got\nCheers to the wish you were here, but you're not\n'Cause the drinks bring back all the memories\nOf everything we've been through\nToast to the ones here today\nToast to the ones that we lost on the way\n'Cause the drinks bring back all the memories\nAnd the memories bring back, memories bring back you \nThere's a time that I remember\nWhen I did not know no pain\nWhen I believed in forever\nAnd everything would stay the same\nNow my heart feel like December\nWhen somebody say your name\n'Cause I can't reach out to call you\nBut I know I will one day, yeah \nEverybody hurts sometimes\nEverybody hurts someday, ay, ay\nBut everything gon' be alright\nGo and raise a glass and say, ay \nHere's to the ones that we got\nCheers to the wish you were here, but you're not\n'Cause the drinks bring back all the memories\nOf everything we've been through\nToast to the ones here today\nToast to the ones that we lost on the way\n'Cause the drinks bring back all the memories\nAnd the memories bring back, memories bring back you \nDoo, doo, doo, doo, doo, doo\nDoo, doo, doo, doo, doo, doo, doo, doo\nDoo, doo, doo, doo, doo, doo, doo\nMemories bring back, memories bring back you \nThere's a time that I remember\nWhen I never felt so lost\nWhen I felt all of the hatred\nWas too powerful to stop (oh, yeah)\nNow my heart feel like an ember\nAnd it's lighting up the dark\nI'll carry these torches for ya\nThat you know I'll never drop, yeah \nEverybody hurts sometimes\nEverybody hurts someday, ay, ay\nBut everything gon' be alright\nGo and raise a glass and say, ay \nHere's to the ones that we got (oh, oh)\nCheers to the wish you were here, but you're not\n'Cause the drinks bring back all the memories\nOf everything we've been through (no, no)\nToast to the ones here today\nToast to the ones that we lost on the way\n'Cause the drinks bring back all the memories\nAnd the memories bring back, memories bring back you \nDoo, doo, doo, doo, doo, doo\nDoo, doo, doo, doo, doo, doo, doo, doo\nDoo, doo, doo, doo, doo, doo, doo\nMemories bring back, memories bring back you\nDoo, doo, doo, doo, doo, doo\nDoo, doo, doo, doo, doo, doo, doo, doo\nDoo, doo, doo, doo, doo, doo, doo (ooh, yeah)\nMemories bring back, memories bring back you \nYeah, yeah, yeah\nYeah, yeah, yeah, yeah, no, no\nMemories bring back, memories bring back you \n"
   }
 ]

@@ -33,7 +33,7 @@ const TracksList = ({ musicData }) => {
     toggleShuffle,
     isShuffle,
   } = useMusicPlayer(musicData);
-
+  
   return (
     <View style={styles.container}>
       <View style={styles.searchContainer}>
